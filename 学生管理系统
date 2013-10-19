@@ -226,7 +226,6 @@ void quitCourse(){
                      {
                          cin.clear();
                          cin.sync();
-                         cout<<"您的输入有误，请输入正确的数字"<<endl;
                      }
                 switch(action)
                 {
