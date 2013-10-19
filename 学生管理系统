@@ -1,3 +1,4 @@
+/******千辛万苦终于写出来了！！第一个大于200行的代码，纪念一下*********/
 #include <iostream>
 #include<stdlib.h>
 #include"string.h"
