@@ -1,0 +1,47 @@
+#include <iostream>
+#include<stdlib.h>
+
+using namespace std;
+
+class Array{
+	int count;
+	int* arr;
+	int num;
+public:
+	Array(int n){
+		count=n;
+		arr=new int[count];
+		num=0;
+	}
+	~Array(){
+		free(arr);
+	}
+
+	bool add(int data){
+		if(num<count){
+			arr[num]=data;
+			num++；
+			return true;
+		}
+		else
+			return false;
+	}
+
+	bool set(int index,int data){
+		if(index<count&&index>=0){
+			arr[index]=data;
+		return true;
+		}
+		else
+			return false;
+	}
+
+	bool find(int index,int &data){
+		if(index<count&&index>=0){
+			data=arr[index];
+			return true;
+		}
+		else
+			return false;
+	}
+};
