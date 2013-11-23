@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+typedef struct node{
+   int elem;
+   struct node *next;
+}*ptrNode,StackNode;
+
+ptrNode head;
+ptrNode InitStack(){
+	head=(ptrNode)malloc(sizeof(StackNode));
+	head->next=NULL;
+	return head;
+}
+
+void push(int elem){
+	ptrNode p=(ptrNode)malloc(sizeof(StackNode));
+	p->elem=elem;
+	if(head->next!=NULL){
+		p->next=head->next;
+		head->next=p;
+	}
+	else{
+		head->next=p;
+		p->next=NULL;
+	}
+}
+
+bool pop(int &elem){
+	ptrNode p=head->next;
+	if(p!=NULL){
+		elem=p->elem;
+		head->next=p->next;
+		free(p);
+		return true;
+	}
+	else
+		return false;
+}
